@@ -1,15 +1,16 @@
 @description('Environment of the web app')
 param environment string = 'dev'
+param prefix string = 'raftx'
 
 @description('Location of services')
 param location string = resourceGroup().location
 
-var webAppName = '${uniqueString(resourceGroup().id)}-${environment}'
-var appServicePlanName = '${uniqueString(resourceGroup().id)}-mpnp-asp'
-var logAnalyticsName = '${uniqueString(resourceGroup().id)}-mpnp-la'
-var appInsightsName = '${uniqueString(resourceGroup().id)}-mpnp-ai'
+var webAppName = '${prefix}-${environment}'
+var appServicePlanName = '${prefix}-mpnp-asp'
+var logAnalyticsName = '${prefix}-mpnp-la'
+var appInsightsName = '${prefix}-mpnp-ai'
 var sku = 'P0V3'
-var registryName = '${uniqueString(resourceGroup().id)}mpnpreg'
+var registryName = '${prefix}mpnpreg'
 var registrySku = 'Standard'
 var imageName = 'techexcel/dotnetcoreapp'
 var startupCommand = ''
