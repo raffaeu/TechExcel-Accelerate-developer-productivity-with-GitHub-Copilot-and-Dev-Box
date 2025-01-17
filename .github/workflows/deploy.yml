@@ -21,6 +21,7 @@ jobs:
     - uses: azure/login@v2.1.1
       with: 
         creds: ${{ secrets.AZURE_CREDENTIALS_REALLY }}
+        enable-AzPSSession: true
 
       # Deploy ARM template
     - name: Run ARM deploy
