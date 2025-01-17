@@ -1,5 +1,7 @@
 name: Azure Bicep
 
+env:
+  targetEnv: 'dev'
 on:
   workflow_dispatch
 
